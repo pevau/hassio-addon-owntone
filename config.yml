@@ -25,9 +25,9 @@ map:
 #  - config:rw
 #  - media:rw
   - share:rw
-host_network: true
-host_dbus: false
-host_ipc: false
+host_network: false
+host_dbus: true
+host_ipc: true
 ingress: true
 hassio_api: false
 auth_api: true
