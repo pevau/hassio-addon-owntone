@@ -20,6 +20,10 @@ CONFIG_PATH=/etc/owntone.conf
 
 cp /etc/owntone.conf.orig $CONFIG_PATH
 
+sed -i -e "/^#\?general {$/,/^#\?}$/s/^#\?\s*uid = .*/uid = \"abc\"/" $CONFIG_PATH
+sed -i -e "/^#\?general {$/,/^#\?}$/s/^#\?\s*db_path = .*/db_path = \"\/share\/owntone\/dbase_and_logs\/songs3.db\"/" $CONFIG_PATH
+
+
 # General
 
 PASSWORD=$(jq -j --raw-output '.general.admin_password // empty' $OPTIONS_PATH)
